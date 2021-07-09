@@ -1,4 +1,3 @@
-//import所需工具包以及路径
 let util = require('../util')
 let mysql=require('mysql')
 
@@ -23,7 +22,7 @@ function register(req, res){
     var pwd=req.body.password;
 
     //数据库操作语句  如果引用变量 要用${},切记如果变量不是int，必须加''
-    var sql1=`select * from users where username = '${user}'`
+    var sql1=`select * from users  where username = '${user}'`
     //var str={}
     //数据库执行语句 sql
     link.query(sql1,function(err,result)
@@ -34,16 +33,16 @@ function register(req, res){
         //str = JSON.stringify(result)
 
 
-       console.log(result[0]);
+       //console.log(result);
 
        //必须要有 用于前端数据的输出 data可以赋值 由于这里不需要返回 所以只初始化
         let responseData = { data: {} }
 
         
-        if( result[0].username == user ){
-            util.responseClient(res, 200, 0, '用户名已存在', responseData)
-        }
+        
       
+        if(result[0]&&result[0].username == user)
+        util.responseClient(res, 200, 0, '用户名已存在', responseData);
         else
         {
             var sql2=`insert into users(username,password) values('${user}','${pwd}')`
@@ -58,6 +57,7 @@ function register(req, res){
                 }  
             })
         }
+         
         
     })
 

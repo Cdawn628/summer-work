@@ -18,6 +18,9 @@ module.exports = function(app){
    
     //登陆界面
     app.post('/api/login',require('./login'))
+    app.get('/api/Rec',require('./Rec'))
+    app.post('/api/Hot',require('./Hot'))
+    app.post('/api/Sub',require('./Sub'))
 
    
 

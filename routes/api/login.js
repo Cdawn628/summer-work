@@ -46,10 +46,10 @@ function login(req, res){
         //str = JSON.stringify(result)
 
 
-       console.log(result[0].username);
+       console.log(user);
 
        //必须要有 用于前端数据的输出 data可以赋值 由于这里不需要返回 所以只初始化
-        let responseData = { data: {} }
+        let responseData = { userID: {} }
 
         if(!result[0])
         {
@@ -58,6 +58,8 @@ function login(req, res){
         return;
         }
         if(result[0].password == pwd && result[0].username == user ){
+
+            responseData.userID=result[0].userID;
             util.responseClient(res, 200, 1, '登陆成功', responseData)
         }
         else{

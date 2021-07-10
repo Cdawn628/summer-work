@@ -18,9 +18,9 @@ module.exports = function(app){
    
     //登陆界面
     app.post('/api/login',require('./login'))
-    app.get('/api/Rec',require('./Rec'))
-    app.get('/api/Hot',require('./Hot'))
-    app.get('/api/Sub',require('./Sub'))
+    app.get('/api/list_Rec',require('./list_Rec'))
+    app.get('/api/list_Hot',require('./list_Hot'))
+    app.get('/api/list_Sub',require('./list_Sub'))
 
    
 

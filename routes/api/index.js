@@ -26,10 +26,20 @@ module.exports = function(app){
    
     //登陆界面
     app.post('/api/login',require('./login'))
+  
+    //管理员删除
+    app.post('/api/ad_dele',require('./admin/deleNews'))
+
+    //管理员查看
+    app.post('/api/ad_check',require('./admin/checkNews'))
+
+  
+  
     app.get('/api/list_Rec',require('./list_Rec'))
     app.get('/api/list_Hot',require('./list_Hot'))
     app.get('/api/list_Sub',require('./list_Sub'))
 
+  
      //文章详情，点赞，收藏
   app.get('/api/detail',require('./detail'))
   app.get('/api/like1',require('./like1'))

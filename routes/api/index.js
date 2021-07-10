@@ -33,6 +33,8 @@ module.exports = function(app){
     //管理员查看
     app.post('/api/ad_check',require('./admin/checkNews'))
 
+  //管理员审核通过
+    app.post('/api/pass',require('./admin/pass'))
   
   
     app.get('/api/list_Rec',require('./list_Rec'))

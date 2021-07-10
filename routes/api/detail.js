@@ -19,6 +19,7 @@ function textDetail(req, res1)
     var results=0
     let sql1 = `SELECT * FROM news WHERE newsID = '${newsID}'`
     let sql2 = `SELECT * FROM act WHERE userID = '${userID}'`
+    var responseData = {news: {} ,act:{}};
     function test () 
     {
         return new Promise(function (resolve) 
@@ -29,9 +30,9 @@ function textDetail(req, res1)
                 {
                     console.log(`[SELECT1 ERROR] - ${err.message}`)
                 }
-                console.log("r1"+results);
-                if(result1){results=results+1;console.log("results1:"+results);}
-                resolve(results)
+                responseData.news = result1;
+                console.log("r1:",result1);
+                resolve(responseData.news)
             })
     })}
 
@@ -43,13 +44,11 @@ function textDetail(req, res1)
         {
             console.log(`[SELECT2 ERROR] - ${err.message}`)
         }
-        console.log("r2"+results);
-        if(result2){results+=res;console.log("results2:"+results);}
-        })
-        return results+1
-    }).then(function(res){
-        let responseData={data:{}};
-        if(res==2){
+        console.log(res);
+        responseData.news=res
+        responseData.act = result2;
+        console.log(responseData);
+        if(responseData){
         util.responseClient(res1, 200, 1, '内容和获取成功', responseData);
         }else {
         util.responseClient(res1, 200, 0, '内容和状态获取失败', responseData);
@@ -57,9 +56,7 @@ function textDetail(req, res1)
     })
     .catch(function (err) {
         console.log("err:"+err);})
-
+})
 }
-
-
 
 module.exports =textDetail

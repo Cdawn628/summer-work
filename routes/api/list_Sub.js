@@ -1,4 +1,4 @@
-/*url:'/api/explore_Sub' //关注界面（推送用户关注的文章）
+/*url:'/api/list_Sub' //关注界面（推送用户关注的文章）
 method : 'get',
 params:  //前端传给后端的数据
 {

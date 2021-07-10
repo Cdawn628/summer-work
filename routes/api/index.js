@@ -43,7 +43,6 @@ module.exports = function(app){
      //文章详情，点赞，收藏
   app.get('/api/detail',require('./detail'))
   app.get('/api/like1',require('./like1'))
-  app.get('/api/like2',require('./like2'))
   app.get('/api/subscribe',require('./subscribe'))
   app.get('/api/read',require('./read'))
 

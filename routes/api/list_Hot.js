@@ -1,4 +1,4 @@
-/*url:'/api/explore_Hot' //推荐界面（推送所有文章）
+/*url:'/api/list_Hot' //推荐界面（推送所有文章）
 method : 'get',
 params:  //前端传给后端的数据
 {

@@ -38,6 +38,9 @@ module.exports = function(app){
     app.get('/api/list_Rec',require('./list_Rec'))
     app.get('/api/list_Hot',require('./list_Hot'))
     app.get('/api/list_Sub',require('./list_Sub'))
+  
+     //文章发布
+     app.post('/api/launch',require('./launch'))
 
   
      //文章详情，点赞，收藏

@@ -30,7 +30,12 @@ module.exports = function(app){
     app.get('/api/list_Hot',require('./list_Hot'))
     app.get('/api/list_Sub',require('./list_Sub'))
 
-   
+     //文章详情，点赞，收藏
+  app.get('/api/detail',require('./detail'))
+  app.get('/api/like1',require('./like1'))
+  app.get('/api/like2',require('./like2'))
+  app.get('/api/subscribe',require('./subscribe'))
+  app.get('/api/read',require('./read'))
 
     // 测试路由
     //app.get('/api/test',function(req, res){

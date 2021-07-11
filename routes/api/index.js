@@ -27,6 +27,9 @@ module.exports = function(app){
     //登陆界面
     app.post('/api/login',require('./login'))
   
+    //管理员列表
+    app.get('/api/list_admin',require('./list_admin'))
+  
     //管理员删除
     app.post('/api/ad_dele',require('./admin/deleNews'))
 

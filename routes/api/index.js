@@ -39,6 +39,8 @@ module.exports = function(app){
   //管理员审核通过
     app.post('/api/pass',require('./admin/pass'))
   
+  //管理员审核不通过
+  app.post('/api/nopass',require('./admin/nopass'))
   
     app.get('/api/list_Rec',require('./list_Rec'))
     app.get('/api/list_Hot',require('./list_Hot'))

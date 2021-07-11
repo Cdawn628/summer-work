@@ -1,4 +1,4 @@
-/*url:'/api/list_Rec' //推荐界面（推送所有文章）
+/*url:'/api/list_admin' 
 method : 'get',
 params:  //前端传给后端的数据
 {
@@ -7,7 +7,10 @@ res://后端返回给前端的值
 {
     newsID:'',
     newsTitle:'',
-    publishAt:''
+    publishTime:'',
+    author:'',
+    authorID:'',
+    flag:''
 }
 */
 
